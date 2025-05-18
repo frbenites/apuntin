@@ -1,7 +1,13 @@
 from pydub import AudioSegment
 import os
 
-def chunk_audio(input_path, output_dir, chunk_length_min=15):
+def chunker(input_path, output_dir, chunk_length_min=7):
+    '''
+    This function takes an audio file and splits it into chunks of a certain length.
+    :param input_path: Path to audio file we want to chunk
+    :param output_dir: Directory where the chunks will be saved
+    :param chunk_length_min: Length of each chunk in minutes
+    '''
     audio = AudioSegment.from_file(input_path)
     chunk_length_ms = chunk_length_min * 60 * 1000
 
