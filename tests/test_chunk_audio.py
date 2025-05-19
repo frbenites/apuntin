@@ -1,7 +1,7 @@
 import unittest
 import os
 from pydub.generators import Sine
-from src.chunk_audio import chunk_audio
+from src.chunker import chunker
 
 class TestChunkAudio(unittest.TestCase):
     def setUp(self):
@@ -19,7 +19,7 @@ class TestChunkAudio(unittest.TestCase):
     def test_chunk_audio(self):
         """Test that the audio is split into expected chunks."""
         chunk_length_min = 1
-        chunks = chunk_audio(self.test_audio_path, self.output_dir, chunk_length_min)
+        chunks = chunker(self.test_audio_path, self.output_dir, chunk_length_min)
 
         expected_chunks = 3  # 3 minutes total, 1-minute chunks
         self.assertEqual(len(chunks), expected_chunks)
