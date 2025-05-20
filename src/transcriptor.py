@@ -6,7 +6,7 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 logger = logging.getLogger(__name__)
 
-def transcriptor(chunks_path, model_size="base"):
+def transcriptor(chunks_path):
     """
     Transcribes audio chunks using AI    
     """
