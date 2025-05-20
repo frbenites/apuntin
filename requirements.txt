@@ -1,4 +1,7 @@
-openai-whisper
+openai
 pydub
 ffmpeg-python
 unittest
+os
+sys
+logging
