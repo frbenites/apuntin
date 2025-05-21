@@ -2,3 +2,4 @@
 __pycache__/
 *.m4a
 .DS_Store
+/venv
