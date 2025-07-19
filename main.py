@@ -29,8 +29,9 @@ def main(audio_path: str, chunk_length: int, keep_chunks: bool):
     logger.info("🧠 Transcribing chunks...")
     transcript = transcriptor(chunk_paths)
 
-    transcript_path = os.path.join("transcripts", f"{base_name}.txt")
+    transcript_path = os.path.join("transcripts", f"{base_name}.md")
     with open(transcript_path, "w") as f:
+        f.write(f"# Transcript: {base_name}\n\n")
         f.write(transcript)
 
     logger.info(f"✅ Transcript saved to {transcript_path}")
