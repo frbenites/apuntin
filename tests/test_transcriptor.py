@@ -12,9 +12,10 @@ def test_transcription():
     full_transcript = transcriptor(chunk_paths)
     assert isinstance(full_transcript, str)
 
-    with open("transcripts/test_transcript.txt", "w") as f:
+    with open("transcripts/test_transcript.md", "w") as f:
+        f.write(f"# Test Transcript\n\n")
         f.write(full_transcript)
-    assert os.path.exists("transcripts/test_transcript.txt")
+    assert os.path.exists("transcripts/test_transcript.md")
 
 if __name__ == "__main__":
     test_transcription()
